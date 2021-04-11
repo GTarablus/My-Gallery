@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+    <link rel="icon" href="img/minesweeper-icon.png" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body onload="init()" >
+    <h1>🅼🅸🅽🅴🆂🆆🅴🅴🅿🅴🆁</h1>
+    <h3 class="clock">0</h3>
+    <div class="faceHolder" onclick="faceBtn()"></div>
+    <div>
+      <input
+        type="radio"
+        class="radio"
+        id="Easy"
+        name="level"
+        value="Easy"
+        onclick="levelModif(value)"
+      />
+      <label class="radioText" for="Easy">Easy</label>
+      <input
+        type="radio"
+        class="radio"
+        id="Medium"
+        name="level"
+        value="Medium"
+        onclick="levelModif(value)"
+      />
+      <label class="radioText" for="Medium">Medium</label>
+      <input
+        type="radio"
+        class="radio"
+        id="Hard"
+        name="level"
+        value="Hard"
+        onclick="levelModif(value)"
+      />
+      <label class="radioText" for="Hard">Hard</label>
+    </div>
+    <table class="center" oncontextmenu="return false;">
+      <tbody class="game-board"></tbody>
+    </table>
+    <h5 class="bestScore"></h5>
+    <div class="indications">
+      <p class="hints" onClick="hintClick()" title="Hints"></p>
+      <p class="lives"></p>
+      <p class="shields" onClick="safeClick()" title="Safe Click"></p>
+    </div>
+    <h2>Click a cell twice to initialize game 😉</h2>
+    <script src="js/confetti.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

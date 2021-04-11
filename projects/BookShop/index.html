@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarazon</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body onload="init()">
+    <section class="main-container">
+      <h1>Welcome to Tarazon</h1>
+      <scetion class="new-book-container">
+        <form class="new-book" onsubmit="return false" id='addBook'>
+          <label for="title">Title:</label><br />
+          <input type="text" id="title" name="title" /><br />
+          <label for="price">Price:</label><br />
+          <input type="text" id="price" name="price" /><br />
+          <button type="submit" form="addBook" onclick="onAddBook(event)">Submit</button>
+        </form>
+      </scetion>
+      <section class="book-display">
+        <table>
+          <thead>
+            <tr>
+              <td class="id" onclick="onSortBooks('id')">ID</td>
+              <td class="title" onclick="onSortBooks('title')">Name</td>
+              <td class="price" onclick="onSortBooks('price')">Price</td>
+              <td>Actions</td>
+            </tr>
+            
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section class="page-selection">
+      <section class="current-select">
+        <button onclick="onSetPage(-1)">Back</button>
+        <div class="current-page">0</div>
+        <button onclick="onSetPage(1)">Next</button>
+      </section>
+    </section>
+    <section id="myModal" class="modal"></section>
+    <script src="js/bookshop-storage.js"></script>
+    <script src="js/bookshop-service.js"></script>
+    <script src="js/bookshop-controller.js"></script>
+  </body>
+</html>
